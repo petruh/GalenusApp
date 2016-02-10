@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+<title>Edit Appointment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+
+<!-- 
+
+<link
+	href="http://cdn.jsdelivr.net/webjars/jquery-ui/1.11.4/jquery-ui.min.css"
+	th:href="@{/webjars/jquery-ui/1.11.4/jquery-ui.min.css}"
+	rel="stylesheet" media="screen" />
+
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+
+<script
+	src="http://cdn.jsdelivr.net/webjars/jquery-ui/1.11.4/jquery-ui.min.js"
+	th:src="@{/webjars/jquery-ui/1.11.4/jquery-ui.min.js}"></script>
+
+<script
+	src="http://cdn.jsdelivr.net/webjars/jquery-tmpl/beta1.0.0/jquery.tmpl.min.js"
+	th:src="@{/webjars/jquery-tmpl/beta1.0.0/jquery.tmpl.min.js}"></script>
+
+
+
+
+<script src="../static/js/common.js" th:src="@{js/common.js}"></script>
+
+<script src="../static/js/jquery.validate.min"
+	th:src="@{js/jquery.validate.min.js}"></script>
+
+ -->
+
+
+<script>
+
+    $().ready(function() {
+    	$( "#date" ).datepicker({
+  			dateFormat: "dd/mm/yy"
+		
+    })
+    
+</script>
+
+
+</head>
+
+
+<body>
+	<div class="container">
+		<a href="/"> <img
+			src="http://www.3quarksdaily.com/.a/6a00d8341c562c53ef0120a896d16a970b-250wi"
+			width="100" />
+		</a>
+
+		<ol class="breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li class="active">Appointment</li>
+		</ol>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Edit Appointment</h3>
+			</div>
+
+			<div class="alert alert-danger" role="alert" id="error" name="error"
+				style="display: none;"></div>
+
+			<div class="panel-body">
+				<form method="POST" action="/appointment" id="createForm">
+
+
+					<div class="form-group">
+						<label for="patientName">Patient name</label> <input type="text"
+							class="form-control" id="patientName" name="patientName" 
+							th:value="${{appointment.patientName}}" readonly="true"/>
+					</div>
+					<div class="form-group">
+						<label for="doctorName">Doctor name</label> <input type="text"
+							class="form-control" id="doctorName" name="doctorName" 
+							th:value="${appointment.doctorName}" readonly="true"/>
+					</div>
+
+					<div class="form-group">
+						<label for="date">Appointment Date</label>
+						<div class="form-group">
+							<input type="text" id="date" name="date"
+								th:value="${appointment.date}" placeHolder="dd/mm/yyyy" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="time">Appointment Time</label>
+						<div class="form-group">
+							<input type="text" id="time" name="time"
+								th:value="${appointment.time}" placeHolder="hh:mm" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="details">Details</label> <input type="text"
+							class="form-control" id="details" name="details"
+							th:value="${appointment.details}"
+							placeHolder="Other relevant details" />
+					</div>
+					<input type="hidden" class="form-control" id="id" th:value="${appointment.id}" />
+
+
+					<div class="container-fluid">
+						<div class="collapse navbar-collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li><button class="btn btn-default"
+										onclick="/appointment_list">Cancel</button></li>
+								<li>&nbsp;&nbsp;&nbsp;</li>
+								<li><button type="submit" class="btn btn-default">Save
+										appointment</button></li>
+										
+										
+										
+										
+										
+							</ul>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

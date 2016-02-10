@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+<title>Appointments List - Galenus Medical Service</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+<script
+	src="http://cdn.jsdelivr.net/webjars/jquery-tmpl/beta1.0.0/jquery.tmpl.min.js"
+	th:src="@{/webjars/jquery-tmpl/beta1.0.0/jquery.tmpl.min.js}"></script>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<a href="/"> <img
+			src="http://www.3quarksdaily.com/.a/6a00d8341c562c53ef0120a896d16a970b-250wi"
+			width="100" /> <!-- th:src="@{images/logo.png}" />    -->
+		</a>
+
+		<ol class="breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li class="active">Appointments</li>
+			<li><a href="/appointment/generate">Generate</a></li>
+		</ol>
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse">
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" name="query" id="query"
+								placeholder="Search by name" />
+						</div>
+						<button type="submit" class="btn btn-default"
+							onclick="javascript:search(); return false;">Search</button>
+					</form>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/appointment?action=add"><span
+								class="glyphicon glyphicon-plus" aria-hidden="true">NEW
+									APPOINTMENT</span></a></li>
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="alert alert-danger" role="alert" id="error"
+			style="display: none;"></div>
+
+		<!-- Table -->
+		<table class="table">
+			<tr>
+				<th>Patient's First Name</th>
+				<th>Patient's Last Name</th>
+				<th>Doctor's First Name</th>
+				<th>Doctor's Last Name</th>
+				<th>Appointment Date</th>
+				<th>Appointment Time</th>
+				<th>Other Details</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tbody id="appointmentList">
+				<tr th:each="appointment : ${allAppointments}">
+
+					<td th:text="${{appointment.patient.firstName}}"></td>
+					<td th:text="${{appointment.patient.lastName}}"></td>
+					<td th:text="${{appointment.doctor.firstName}}"></td>
+					<td th:text="${{appointment.doctor.lastName}}"></td>
+					<td th:text="${{#dates.format(appointment.date, 'dd/MM/yyyy')}}"></td>
+					<td th:text="${{#dates.format(appointment.time, 'HH:mm')}}"></td>
+					<td th:text="${{appointment.details}}"></td>
+
+					<td><a
+						th:href="@{/appointment?id={id}(id=${{appointment.id}},action='delete')}">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</a> &nbsp; <a
+						th:href="@{/appointment?id={id}(id=${{appointment.id}},action='edit')}">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+					</a></td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+</body>
+</html>

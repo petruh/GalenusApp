@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+<title>Appointments List - Galenus Medical Service</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link
+	href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+	th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+
+<script
+	src="http://cdn.jsdelivr.net/webjars/jquery-tmpl/beta1.0.0/jquery.tmpl.min.js"
+	th:src="@{/webjars/jquery-tmpl/beta1.0.0/jquery.tmpl.min.js}"></script>
+<script>
+	function deleteAppointment(id) {
+		var url = "/rest/appointments/" + id;
+		$.ajax({
+			url : url,
+			type : "DELETE",
+			success : function(data) {
+				console.log("Data: " + data);
+				window.location.href = '/appointment';
+			},
+			error : function(xhr, desc, err) {
+				console.log("Error: " + err);
+				$("#error").html(err);
+				$("#error").show();
+			}
+		});
+	};
+	function edit(id) {
+		var url = "/appointment?action=edit%26id=" + id;
+		window.location.href = url;
+
+	};
+
+	function search() {
+		$("#appointmentList").empty();
+		var query = $("#query").val();
+		var url = "/rest/appointment?query=" + query;
+		$.ajax({
+			url : url,
+			type : "GET",
+			success : function(data) {
+				console.log("Data: " + data);
+				$("#rowTemplate").tmpl(data).appendTo("#appointmentList");
+			},
+			error : function(xhr, desc, err) {
+				console.log("Error: " + err);
+				$("#error").html(err);
+				$("#error").show();
+			}
+		});
+	};
+</script>
+</head>
+<body>
+
+
+	<div class="container">
+		<a href="/"> <img
+			src="http://www.3quarksdaily.com/.a/6a00d8341c562c53ef0120a896d16a970b-250wi"
+			width="100" /> <!-- th:src="@{images/logo.png}" />    -->
+		</a>
+
+		<ol class="breadcrumb">
+			<li><a href="/">Home</a></li>
+			<li><a href="/generate">Generate</a></li>
+			<li class="active">Appointments</li>
+		</ol>
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse">
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" name="query" id="query"
+								placeholder="Search by name" />
+						</div>
+						<button type="submit" class="btn btn-default"
+							onclick="javascript:search(); return false;">Search</button>
+
+					</form>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="/appointment?action=add"><span
+								class="glyphicon glyphicon-plus" aria-hidden="true">NEW
+									APPOINTMENT</span></a></li>
+
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+		<div class="alert alert-danger" role="alert" id="error"
+			style="display: none;"></div>
+
+		<!-- Table -->
+		<table class="table">
+			<tr>
+				<th>Patient's First Name</th>
+				<th>Patient's Last Name</th>
+				<th>Doctor's First Name</th>
+				<th>Doctor's Last Name</th>
+				<th>Appointment Date</th>
+				<th>Appointment Time</th>
+				<th>Other Details</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tbody id="appointmentList">
+				<tr th:each="appointment : ${allAppointments}">
+					<td th:text="${{appointment.patient.firstName}}"></td>
+					<td th:text="${{appointment.patient.lastName}}"></td>
+					<td th:text="${{appointment.doctor.firstName}}"></td>
+					<td th:text="${{appointment.doctor.lastName}}"></td>
+					<td th:text="${{#dates.format(appointment.date, 'dd/MM/yyyy')}}"></td>
+					<td th:text="${{#dates.format(appointment.time, 'HH:mm')}}"></td>
+					<td th:text="${{appointment.details}}"></td>
+
+
+
+					<td><a href="#"
+						th:onclick="'javascript:deleteAppointment(\'' + ${{appointment.id}} + '\'); return false;'">
+							<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+					</a> &nbsp; <a
+						th:href="@{/appointment?id={id}(id=${{appointment.id}},action='edit')}">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+					</a></td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+
+	<script>
+     
+  
+    /* Render the template with the employees data and insert
+       the rendered HTML under the "employeeList" element */
+      
+  	$("#error").html('');
+	$("#error").hide();
+	
+	
+	$("#employeeList").empty();
+	
+    $.ajax({
+         url:"/rest/employees",
+         type:"GET",
+         success: function(data) {
+             console.log("Data: " + data);
+         	 $("#rowTemplate").tmpl(data).appendTo( "#employeeList" );
+         },
+         error: function(xhr, desc, err){
+         	console.log("Error: " + err);
+            $("#error").html(err);
+            $("#error").show();
+	     }
+		});  
+	
+	
+    </script>
+
+	<script id="rowTemplate" type="text/x-jquery-tmpl">
+	<tr>
+
+		<td>${patient.firstName}</td>
+    	<td>${patient.lastName}</td>
+    	<td>${doctor.firstName}</td>
+    	<td>${doctor.lastName}</td>
+    	<td>${date}</td>
+    	<td> ${time}</td>
+		<td> ${details}</td>
+    	<td>
+
+			<a href="#" onclick="javascript:deleteAppointment('${id}'); return false;">
+				<span class="glyphicon glyphicon-remove" aria-hidden="true"/>
+			</a>
+
+			&nbsp;
+			<a href="/appointment?action=edit&amp;id=${id}">
+				<span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
+			</a>
+    		
+    	</td>
+    </tr>
+	</script>
+
+
+
+
+</body>
+</html>
