@@ -34,45 +34,45 @@ public class GalenusApp {
 //		user.setUsername("mock");
 //		user.setPassword("mock");
 //	}
-	
-	@Bean
-	public UserService userService() {
-		return new UserService();
-	}
-
-	@Bean
-	public PatientService patientService() {
-		return new PatientService();
-	}
-	
-	@Bean
-	public DoctorService doctorService() {
-		return new DoctorService();
-	}
-
-	@Bean
-	public AppointmentDAO aptDAO() {
-		return new IMAppointmentDAO();
-		// JDBCAppointmentDAO("localhost", "5432", "test", "test", "test");
-	}
-
-	@Bean
-	public IMUserDAO userDAO() {
-		return new  IMUserDAO();
-		//JDBCUserDAO("localhost", "5432", "galenus", "postgres", "postgres");
-	}
-	
-	@Bean
-	public IMUserDAO patientDAO() {
-		return new  IMUserDAO();
-//		JDBCPatientDAO("localhost", "5432", "galenus", "postgres", "postgres");
-	}
-	
-	@Bean
-	public IMUserDAO doctorDAO() {
-		return new  IMUserDAO();
-//		JDBCDoctorDAO("localhost", "5432", "galenus", "postgres", "postgres");
-	}
+//	
+//	@Bean
+//	public UserService userService() {
+//		return new UserService();
+//	}
+//
+//	@Bean
+//	public PatientService patientService() {
+//		return new PatientService();
+//	}
+//	
+//	@Bean
+//	public DoctorService doctorService() {
+//		return new DoctorService();
+//	}
+//
+//	@Bean
+//	public AppointmentDAO aptDAO() {
+//		return new IMAppointmentDAO();
+//		// JDBCAppointmentDAO("localhost", "5432", "test", "test", "test");
+//	}
+//
+//	@Bean
+//	public IMUserDAO userDAO() {
+//		return new  IMUserDAO();
+//		//JDBCUserDAO("localhost", "5432", "galenus", "postgres", "postgres");
+//	}
+//	
+//	@Bean
+//	public IMUserDAO patientDAO() {
+//		return new  IMUserDAO();
+////		JDBCPatientDAO("localhost", "5432", "galenus", "postgres", "postgres");
+//	}
+//	
+//	@Bean
+//	public IMUserDAO doctorDAO() {
+//		return new  IMUserDAO();
+////		JDBCDoctorDAO("localhost", "5432", "galenus", "postgres", "postgres");
+//	}
 	
 	@Bean
 	public Patient loggedPatient() {
