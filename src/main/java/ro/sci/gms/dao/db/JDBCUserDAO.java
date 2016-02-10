@@ -253,8 +253,22 @@ public class JDBCUserDAO implements UserDAO<User> {
 
 	@Override
 	public User findByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+		List<User> result = new LinkedList<>();
+		try (Connection connection = newConnection();
+				ResultSet rs = connection.createStatement().executeQuery("select * from users where username = '" + username + "' or email ='" + username + "'")) {
+
+			while (rs.next()) {
+				result.add(extractUser(rs));
+			}
+			connection.commit();
+		} catch (SQLException ex) {
+			throw new RuntimeException("Error getting User from DB. (091)", ex);
+		}
+
+		if (result.size() > 1) {
+			throw new IllegalStateException("(091) Multiple Users for username or email: " + username);
+		}
+		return result.isEmpty() ? null : result.get(0);
 	}
 
 }
