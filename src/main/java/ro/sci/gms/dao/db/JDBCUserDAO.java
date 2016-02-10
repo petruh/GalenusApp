@@ -41,10 +41,10 @@ public class JDBCUserDAO implements UserDAO<User> {
 	 * This seems to be required. Doesn't work without it.
 	 */
 	public JDBCUserDAO(){
-		this("ec2-79-125-117-94.eu-west-1.compute.amazonaws.com",
-				"5432", "d99d8uvcdiqh5q",
-				"gsmxwxyrbiqutc", 
-				"ifm7QuPfDxj7VYYqReCWKKQp9Z");
+		this("ec2-107-20-136-89.compute-1.amazonaws.com",
+				"5432", "d7knfdj6mtmiln",
+				"byqbrtdwaibjxz", 
+				"UAl53FuuLtSkCF3oFM3itsxvaE");
 /*		this("ec2-54-83-12-22.compute-1.amazonaws.com",
 				"5432", "d78nunqpo44clm",
 				"zjxfqqjwejqiid", 

@@ -9,14 +9,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import ro.sci.gms.dao.AppointmentDAO;
-import ro.sci.gms.dao.db.JDBCDoctorDAO;
-import ro.sci.gms.dao.db.JDBCPatientDAO;
-import ro.sci.gms.dao.db.JDBCUserDAO;
 import ro.sci.gms.dao.inmemory.IMAppointmentDAO;
 import ro.sci.gms.dao.inmemory.IMUserDAO;
 import ro.sci.gms.domain.Agenda;
 import ro.sci.gms.domain.Doctor;
 import ro.sci.gms.domain.Patient;
+import ro.sci.gms.domain.User;
 import ro.sci.gms.service.DoctorService;
 import ro.sci.gms.service.PatientService;
 import ro.sci.gms.service.UserService;
@@ -29,6 +27,13 @@ public class GalenusApp {
 		SpringApplication.run(GalenusApp.class, args);
 		
 	}
+	
+//	@Bean 
+//	public User loadMockUser() {
+//		User user = new User();
+//		user.setUsername("mock");
+//		user.setPassword("mock");
+//	}
 	
 	@Bean
 	public UserService userService() {
