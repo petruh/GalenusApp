@@ -140,7 +140,9 @@ public class JDBCUserDAO implements UserDAO<User> {
 
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				user.setId(rs.getLong(1));
+				Long id = rs.getLong(1);
+				user.setId(id);
+				Li.st("User id is:" + id.toString());
 			}
 			rs.close();
 
