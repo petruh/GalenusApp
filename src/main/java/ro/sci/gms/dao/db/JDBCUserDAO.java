@@ -79,7 +79,7 @@ public class JDBCUserDAO implements UserDAO<User> {
 					.append(pass).toString();
 			Connection result = DriverManager.getConnection(url);
 			result.setAutoCommit(false);
-	
+			Li.st("Connection successful.");
 			return result;
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -116,11 +116,13 @@ public class JDBCUserDAO implements UserDAO<User> {
 				ps = connection.prepareStatement(
 						"update users set first_name=?, last_name=?, user_name=?, password=?, address=?, phone= ?, email= ?, role=? "
 								+ "where id = ? returning id");
+				Li.st("Updating userl.");
 			} else {
 
 				ps = connection.prepareStatement(
 						"insert into users (first_name, last_name, user_name, password, address, phone, email, role) "
 								+ "values (?, ?, ?, ?, ?, ?, ?, ?) returning id");
+				Li.st("Inserting user.");
 			}
 
 			ps.setString(1, user.getFirstName());
