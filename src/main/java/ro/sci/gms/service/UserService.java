@@ -28,7 +28,7 @@ public class UserService implements UserDetailsService {
 	 */
 //	@Resource(name = "userDAO")
 	@Autowired
-	@Qualifier("JDBCUserDAO")
+	@Qualifier("IMUserDAO")
 	private UserDAO<User> userDAO;
 
 	public void save(User user) throws ValidationException {

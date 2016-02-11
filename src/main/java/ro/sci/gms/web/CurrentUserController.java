@@ -10,13 +10,14 @@ import ro.sci.gms.domain.User;
 public class CurrentUserController {
 	
 	@RequestMapping("/rest/currentuser")
-	public String getCurrentUsername(@AuthenticationPrincipal User user){
-		if (user==null) {
-			return "false";
-		}
-		else {
-			return user.getUsername();
-		}
+	public User getCurrentUsername(@AuthenticationPrincipal User currentUser){
+//		if (user==null) {
+//			return "false";
+//		}
+//		else {
+//			return user.getUsername();
+//		}
+		return currentUser;
 	}
 
 }

@@ -13,7 +13,7 @@ public class IndexController {
 	@Autowired
 	private AppointmentService aptService;
 	
-	@RequestMapping("/")
+	@RequestMapping(value={"/", "index.html"})
 	String index() throws ValidationException {
 //		aptService.generateSome();
 		return "index";

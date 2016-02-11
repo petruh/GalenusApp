@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -24,10 +25,13 @@ public class RegistrationController {
 	@Autowired
 	@Qualifier("userService")
 	UserService userService;
+	@Autowired 
+	PasswordEncoder passwordEncoder;
 
 	@RequestMapping(method = RequestMethod.POST)
 	public String save(User user, BindingResult bindingResult) throws ValidationException {
 		LOGGER.debug("Saving: " + user);
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		try {
 			userService.save(user);
 		} catch (Exception e) {
