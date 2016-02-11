@@ -8,21 +8,21 @@
     <title>Doctor B</title>
 	
 	<!-- core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon2.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/images/ico/favicon2.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 <body class="homepage">
@@ -37,10 +37,10 @@
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="http://www.skype.com/ro/" target="_blank"><i class="fa fa-skype"></i></a></li>
                             </ul>
                        </div>
                     </div>
@@ -57,7 +57,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -69,15 +69,21 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Doctors <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="doctora.html">Doctor A</a></li>
-                                <li class="active"><a href="doctorb.html">Doctor B</a></li>
+                                <li  class="active"><a href="doctorb.html">Doctor B</a></li>
                             </ul>
                         </li>
                         <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>                        
+                        <li><a href="contact-us.html">Contact</a></li> 
+                        <li class="logout">
+                            <form th:action="@{/logout}" method="post">
+                                <input class="logout-button" type="submit" value="Sign Out" />
+                            </form>
+                        </li>
+                        <li class="session"></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown" id="login-icon">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/ico/login.png">Register / Login <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/ico/login.png">Register / Login <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="register&login.html">PATIENT - Register/Login</a></li>
                                 <li><a href="login.html">DOCTOR - Login</a></li>
@@ -90,26 +96,149 @@
 		
     </header><!--/header-->
     
+    <!------------------------------------------------------CV DOCTOR--------------------------------------->
     
-    
-    
+    <div class="container">
+        <div class="col-md-12">
+            <div id="cv-content">
+                     
+                 <div id="page-wrap" class="col-md-12">
+            
+                    <div id="contact-info" class="vcard col-md-12">
+                        <h1 class="fn">Doctor B</h1>
+                    <!-- Microformats! -->
+                        <div class="col-md-6"><img src="/images/cv-doctorb.jpg" alt="" id="pic"/></div>
+                        <div class="contact-cv col-md-6">
+                            <h2>DR. ROLANDE FRANK-FISCHER</h2>
+                            <h3>EAR-NOSE-THROAT Specialist / HEAD & NECK SURGERY,
+AESTHETIC SURGERY of Head & Neck 
+</h3>
+                            <p>
+                                Cell: <span class="tel">132-24544-31231</span><br />
+                                Email: <a class="email">doctorb@galenus.com</a>
+                            </p>
+                        </div>
+                         
+                       
+                    </div>
+                        
+                    <div id="objective" class="col-md-12">
+                    </div>
+                
+                    <div class="clear"></div>
+                
+                    <dl>
+                        <dd class="clear col-md-6"></dd>
+                        
+                        <dt class="col-md-4">Profile Summary</dt>
+                        <dd class="col-md-8">
+                            <ul>
+                                <li>1981-1987: Studied Medicine at the University of Timisoara, Romania</li>
+                                <li>1988-1992: Specialist Training in ENT, Offenburg, Germany, and the ENT Clinic of the Karlsruhe Municipal Hospital</li>
+                                <li>August 1992: ENT Specialist, Head and Neck Surgery, Plastic surgery of the head and neck area, and Medical Director of the ENT Clinic of the Municipal Hospital Karlsruhe, Germany</li>
+                                <li>November 1992: Chief Physician and Deputy Director of the ENT Clinic of the Karlsruhe Municipal Hospital</li>
+                                <li>July 1996: established private ENT practice, as well as operational activities and management of the ENT department of the Paracelsus Clinic Karlsruhe</li>
+                            </ul>
+                        </dd>
+                        
+                        <dd class="clear col-md-6"></dd>
+                        
+                        <dt  class="col-md-4">Personal details</dt>
+                        <dd class="col-md-8">
+                            <h2>Full Name</h2>
+                            <p>B</p>
+                            
+                            <h2>Nationality</h2>
+                            <p>Spanish</p>
+                            
+                            <h2>Marital status</h2>
+                            <p>Married, twoo children</p>
+                        </dd>
+                        
+                        <dd class="clear col-md-6"></dd>
+                        
+                        <dt class="col-md-4">DIAGNOSTICS & THERAPY</dt>
+                        <dd class="col-md-8">
+                            <ul>
+                                <li>Endoscopies</li>
+                                <li>ENT check-up: larynx / vocal cords, sinuses, ear, salivary glands</li>
+                                <li>Specialist in the Treatment of the EVB-Virus (Epstein-Barr-Virus and Mononucleosis)</li>
+                                <li>Laryngeal cancer prevention</li>
+                                <li>Endoscopic examination of the ear, nose and throat</li>
+                                <li>Postoperative endoscopic treatments for traumatic brain injury and sinus surgery</li>
+                                <li>Microscopic examination of the ears</li>
+                                <li>Sonography (ultrasound) of the sinuses, the neck (lymph node) and the salivary glands</li>
+                                <li>Tinnitus Diagnosis and Treatment</li>
+                                <li>Clarification of hearing loss, conductive hearing loss and dizziness as well as their diagnostic tests</li>
+                                <li>Audiometry (hearing tests)</li>
+                                <li>Tympanometry (pressure measurement in the middle ear and the Eustachian Tube)</li>
+                            </ul>
+                        </dd>
+                        
+                        <dd class="clear col-md-6"></dd>
+                        
+                        <dt class="col-md-4">Other services and consultations</dt>
+                        <dd class="col-md-8">
+                            <ul>
+                                <li>Medical examinations for voice and speech professionals, boat license, flying, scuba diving</li>
+                                <li>Medical Assessment Certificates (approved medical expert for Ear, Nose and Throat / Head and Neck Surgery)</li>
+                            </ul>
+                        </dd>
+                        
+                        
+                        <dd class="clear col-md-8"></dd>
+                        
+                        <dt  class="col-md-4">Surgeries</dt>
+                        <dd class="col-md-8"> 
+                            <h2>Outpatient surgeries (under local or general anesthesia, in renowned private hospitals)</h2>
+                            <ul>
+                                <li>Adenoidectomy (removal of polyps in children)</li>
+                                <li>Paracentesis (drum section)</li>
+                                <li>Tympanic drainage (inserting tubes into the eardrum)</li>
+                                <li>Tonsillectomy (tonsils), mainly with laser</li>
+                                <li>Sampling of tissues</li>
+                                <li>Otoplasty (Aesthetic Ear Surgery)</li>
+                                <li>Laser surgery of smaller tumors, warts, birthmarks, etc. (ENT)</li>
+                                <li>Tympanoplasty</li>
+                                <li>Microsurgery of the ear</li>
+                                <li>Snoring surgery with laser</li>
+                            </ul>
+                            
+                            <h2>Inpatient surgery (under general anesthesia and in collaboration with an anesthetic)</h2>
+                            <ul>
+                                <li>Nasal septum straightening</li>
+                                <li>Rhinoplasty (aesthetic rhinoplasty)</li>
+                                <li>Endoscopic endonasal surgery of the paranasal sinuses and the nasal soft tissues</li>
+                                <li>Snoring surgery with laser</li>
+                                <li>Otoplasty (Ear surgery Aesthetic)</li>
+                                <li>Salivary gland surgery (parotid, submandibular)</li>
+                            </ul>
+                        </dd>
+                        
+                        <dd class="clear col-md-6"></dd>
+                    </dl>
+                
+                    <div class="clear"></div>
+            
+                </div>   
+            </div>
+        </div>
+    </div>
     
     <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Quality Assurance </h3>
                         <ul>
                             <li>Sfica Simina</li>
-                            <li>Alin Ciupei</li>
                             <li>Raul Ciunt</li>
-                            <li>Peter Dan</li>
                         </ul>
                     </div>    
                 </div><!--/.col-md-3-->
 
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Java development </h3>
                         <ul>
@@ -121,17 +250,8 @@
                     </div>    
                 </div><!--/.col-md-3-->
         
-                <div class="col-md-3 footer-text col-sm-6">
-                    <div class="widget">
-                        <h3> Automation</h3>
-                        <ul>
-                            <li>Gogota Claudiu</li>
-                            <li>Sas Georgian</li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
                 
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Project management </h3>
                         <ul>
@@ -173,12 +293,12 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/scroll.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/wow.min.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/wow.min.js"></script>
 </body>
 </html>

@@ -64,7 +64,7 @@
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
+                        <li class="active"><a href="index.html">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li class="dropdown">
@@ -84,11 +84,11 @@
                         <li class="session"></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                            <li class="dropdown active" id="login-icon">
+                            <li class="dropdown" id="login-icon">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/ico/login.png">Register / Login <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="register&login.html">PATIENT - Register/Login</a></li>
-                                    <li class="active"><a href="login.html">DOCTOR - Login</a></li>
+                                    <li><a href="login.html">DOCTOR - Login</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -129,14 +129,20 @@
                                     <input type="text" value="" class="input-xlarge form-control"  name="firstname"><br>
                                     <label>Last Name</label>
                                     <input type="text" value="" class="input-xlarge form-control"  name="lastname"><br>
-                                    <label>Title</label>
-                                    <input type="text" value="" class="input-xlarge form-control"  name="title"><br>
-                                    <label>Speciality</label>
-                                    <input type="text" value="" class="input-xlarge form-control"  name="speciality"><br>
-                                    <label>Years of experience</label>
-                                    <input type="number" value="" class="input-xlarge form-control"  name="experience"><br>
-                                    <label>Number of patients</label>
-                                    <input type="number" value="" class="input-xlarge form-control"  name="nrpatients"><br>
+                                    <label>Gender</label><br>
+                                    <select name="select-gender" class="input-xlarge form-control">
+                                    	<option> - Select your gender - </option>
+                                    	<option value="male">Male</option>
+                                    	<option value="female">Female</option>
+                                    </select><br>
+                                    <label>Date of birth</label>
+                                    <input type="date" name="bday" class="input-xlarge form-control"><br>
+                                    <label>My current doctor</label>
+                                    <select name="select-doctor" class="input-xlarge form-control">
+                                    	<option> - Doctor to be registered with - </option>
+                                    	<option value="doctora">Doctor A</option>
+                                    	<option value="doctorb">Doctor B</option>
+                                    </select><br>
                                     <label>Adress</label><br>
                                     <textarea value="" rows="3" class="input-xlarge form-control"  name="adress">
                                     </textarea><br>
@@ -144,6 +150,17 @@
                                     <input type="text" value="" class="input-xlarge form-control"  name="phone"><br>
                                     <label>Email</label>
                                     <input type="text" value="" class="input-xlarge form-control"  name="email"><br>
+                                    <label>Blood type</label>
+                                    <select name="select-blood" class="input-xlarge form-control">
+                                    	<option> - Select blood type - </option>
+                                    	<option value="a">A</option>
+                                    	<option value="b">B</option>
+                                    	<option value="ab">AB</option>
+                                    	<option value="0">0</option> 
+                                    </select><br>
+                                    <label>Medical background</label><br>
+                                    <textarea value="" rows="3" class="input-xlarge form-control"  name="mbackground">
+                                    </textarea><br>
                                     <label>Password</label>
                                 	<input type="password" class="input-xlarge form-control"  name="password"><br>
                                   	<div class="pull-right">

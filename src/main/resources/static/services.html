@@ -8,21 +8,21 @@
     <title>Services</title>
 	
 	<!-- core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon2.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/images/ico/favicon2.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 <body class="homepage">
@@ -37,10 +37,10 @@
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="http://www.skype.com/ro/" target="_blank"><i class="fa fa-skype"></i></a></li>
                             </ul>
                        </div>
                     </div>
@@ -57,7 +57,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -73,11 +73,17 @@
                             </ul>
                         </li>
                         <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>                        
+                        <li><a href="contact-us.html">Contact</a></li>
+                        <li class="logout">
+                            <form th:action="@{/logout}" method="post">
+                                <input class="logout-button" type="submit" value="Sign Out" />
+                            </form>
+                        </li>
+                        <li class="session"></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown" id="login-icon">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/ico/login.png">Register / Login <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/ico/login.png">Register / Login <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="register&login.html">PATIENT - Register/Login</a></li>
                                     <li><a href="login.html">DOCTOR - Login</a></li>
@@ -94,95 +100,122 @@
         <div class="container">
            <div class="center wow fadeInDown">
                 <h2>Our Services</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
 
             <div class="row">
-                <div class="features">
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-bullhorn"></i>
-                            <h2>Fresh and Clean</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-comments"></i>
-                            <h2>Retina ready</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-cloud-download"></i>
-                            <h2>Easy to customize</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-                
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-leaf"></i>
-                            <h2>Adipisicing elit</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-cogs"></i>
-                            <h2>Sed do eiusmod</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-
-                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <i class="fa fa-heart"></i>
-                            <h2>Labore et dolore</h2>
-                            <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                        </div>
-                    </div><!--/.col-md-4-->
-                </div><!--/.services-->
+                <section id="services" class="service-item">
+            	   <div class="container">
+                        <div class="row"><br>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="media services-wrap wow fadeInDown">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" src="/images/services/services1.png">
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Compatibility</h3>
+                                        <p>Our site is compatible with the latest version of the most known internet browsers</p>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="col-sm-6 col-md-4">
+                                <div class="media services-wrap wow fadeInDown">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" src="/images/services/services2.png">
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Online appointments</h3>
+                                        <p>You can make an appointment to an excellent doctor in just seconds</p>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="col-sm-6 col-md-4">
+                                <div class="media services-wrap wow fadeInDown">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" src="/images/services/services3.png">
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Technical support</h3>
+                                    </div>
+                                    <p>For any additional information please contact us and we will make it work.
+            Register as a user and you can make appointments and chat with your favourite doctor
+                                </div>
+                            </div>  
+            
+                            <div class="col-sm-6 col-md-4">
+                                <div class="media services-wrap wow fadeInDown">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" src="/images/services/services4.png">
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Blog</h3>
+                                        <p>Latest treatments for the most common and more than unpleasant symptoms are a just click away.
+            </p>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="col-sm-6 col-md-4">
+                                <div class="media services-wrap wow fadeInDown">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" src="/images/services/services5.png">
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Mobile</h3>
+                                        <p>You can use our services on your mobile phone too</p>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div class="col-sm-6 col-md-4">
+                                <div class="media services-wrap wow fadeInDown">
+                                    <div class="pull-left">
+                                        <img class="img-responsive" src="/images/services/services6.png">
+                                    </div>
+                                    <div class="media-body">
+                                        <h3 class="media-heading">Get medical help</h3>
+                                        <p>You can contact one of your doctors online. The treatment could be provided instantly.</p>
+                                    </div>
+                                </div>
+                            </div>                                                
+                        </div><!--/.row-->
+                    </div><!--/.container-->
+                </section><!--/#services-->
             </div><!--/.row--> 
 
 
             <div class="get-started center wow fadeInDown">
                 <h2>Ready to get started?</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore  magna aliqua. <br>  Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
                 <div class="request">
-                    <h4><a href="register&login.html">Register as client</a></h4>
+                    <h4><a href="register&login.html">Register as patient</a></h4>
                 </div>
             </div><!--/.get-started-->
 
             <div class="clients-area center wow fadeInDown">
-                <h2>What our client says</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>What our patients say</h2>
             </div>
 
             <div class="row">
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <img src="images/client1.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span> </h4>
+                        <img src="/images/client1.png" class="img-circle" alt="">
+                        <h3>Why wait several minutes on the phone to make an appointment to the doctor? I handle the appointments myself.</h3>
+                        <h4><span>-Vasile Gatulescu /</span> </h4>
                     </div>
                 </div>
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <img src="images/client2.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span> </h4>
+                        <img src="/images/client2.png" class="img-circle" alt="">
+                        <h3>I have solved one of my ENT problems by sending an online message to my doctor? As simple as that…..</h3>
+                        <h4><span>-Martian Urechila / </span> </h4>
                     </div>
                 </div>
                 <div class="col-md-4 wow fadeInDown">
                     <div class="clients-comments text-center">
-                        <img src="images/client3.png" class="img-circle" alt="">
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
-                        <h4><span>-John Doe /</span> </h4>
+                        <img src="/images/client3.png" class="img-circle" alt="">
+                        <h3>It is very useful for me to have the possibility to search thorough the doctor`s already given advice.</h3>
+                        <h4><span>-John Nose /</span> </h4>
                     </div>
                 </div>
            </div>
@@ -194,19 +227,17 @@
     <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Quality Assurance </h3>
                         <ul>
                             <li>Sfica Simina</li>
-                            <li>Alin Ciupei</li>
                             <li>Raul Ciunt</li>
-                            <li>Peter Dan</li>
                         </ul>
                     </div>    
                 </div><!--/.col-md-3-->
 
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Java development </h3>
                         <ul>
@@ -218,17 +249,8 @@
                     </div>    
                 </div><!--/.col-md-3-->
         
-                <div class="col-md-3 footer-text col-sm-6">
-                    <div class="widget">
-                        <h3> Automation</h3>
-                        <ul>
-                            <li>Gogota Claudiu</li>
-                            <li>Sas Georgian</li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
                 
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Project management </h3>
                         <ul>
@@ -270,12 +292,12 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/scroll.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/wow.min.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/wow.min.js"></script>
 </body>
 </html>
