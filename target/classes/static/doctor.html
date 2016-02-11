@@ -8,22 +8,22 @@
     <title>User page</title>
 	
 	<!-- core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/zabuto_calendar.min.css">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/zabuto_calendar.min.css">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon2.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/images/ico/favicon2.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 <body class="homepage">
@@ -38,10 +38,10 @@
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="http://www.skype.com/ro/" target="_blank"><i class="fa fa-skype"></i></a></li>
                             </ul>
                        </div>
                     </div>
@@ -58,7 +58,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -74,11 +74,17 @@
                             </ul>
                         </li>
                         <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>                        
+                        <li><a href="contact-us.html">Contact</a></li> 
+                        <li class="logout">
+                            <form th:action="@{/logout}" method="post">
+                                <input class="logout-button" type="submit" value="Sign Out" />
+                            </form>
+                        </li>
+                        <li class="session"></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right session-hide">
                             <li class="dropdown active" id="login-icon">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/ico/login.png">Register / Login <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/ico/login.png">Register / Login <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="register&login.html">PATIENT - Register/Login</a></li>
                                     <li class="active"><a href="login.html">DOCTOR - Login</a></li>
@@ -91,7 +97,7 @@
 		
     </header><!--/header-->
             
-            <!----------------------------------------DOCTOR PAGE------------------------------------->
+            <!----------------------------------------DOCTOR USER PAGE------------------------------------->
             
     <div class="content">
         <div class="container">
@@ -99,7 +105,7 @@
                 <div class="userpage-doctors">
                     <div class="col-md-6">
                         <div class="thumbnail">
-                        <img src="images/ico/doctors.png" alt="ALT NAME" class="img-responsive" />
+                        <img src="/images/ico/doctors.png" alt="ALT NAME" class="img-responsive" />
                             <div class="caption">
                                  <h3>Doctor A/B</h3>
                                 <p align="center"><a href="editdoctor.html" class="btn btn-primary btn-block">Edit profile</a>
@@ -109,12 +115,16 @@
                     </div>
                     <div class="col-md-6">
                         <div class="col-md-12">
-                                <p align="center"><a class="btn btn-primary btn-block send-msg show-calendar">See appoitments</a>
+                                <p align="center"><a href="appointments_list.html" class="btn btn-primary btn-block send-msg">View appoitments</a>
+                                <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: pre-wrap; background-color: rgb(255, 255, 255);"><div id="calendar"></div></span>
+                        </div>
+                        <div class="col-md-12">
+                                <p align="center"><a class="btn btn-primary btn-block send-msg show-calendar">Show calendar</a>
                                 <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: pre-wrap; background-color: rgb(255, 255, 255);"><div id="calendar"></div></span>
                         </div>
                         
                         <div class="col-md-12 hide-photo">
-                            <img class="img-responsive" src="images/appoitment2.jpg">
+                            <img class="img-responsive" src="/images/appoitment2.jpg">
                         </div>
                         <div class="col-md-12 messagepop pop">
                           <form method="post" id="new_message" action="#">
@@ -167,33 +177,19 @@
                         </div>
                         <br>
                         <div class="row">
-                            <div class="col-md-6">
-                                <p align="center"><a href="#" class="btn btn-primary btn-block conv-hist">Conversation history</a>
-                            </div>
-                            <div class="col-md-6">
-                                <p align="center"><a href="#" class="btn btn-primary btn-block send-msg">Recieve the message</a>
-                            </div>
-                        </div>
-                        <div class="row">
                                    <div class="col-md-12">
                                 <div class="panel panel-primary">
                                     <div class="panel-heading" id="accordion">
-                                        <span class="glyphicon glyphicon-comment message-icon"></span>Send a message to a patient
-                                        <div class="btn-group pull-right">
-                                            <a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                        <span class="glyphicon glyphicon-comment message-icon"></span><span class="icon-text">Send a message to a patient</span>
+                                        <div class="pull-right">
+                                            <a href="doctor.html"><span class="glyphicon glyphicon-refresh message-icon" style="color:white"></span><span id="refresh-page">Refresh page</span>
                                             </a>
                                         </div>
                                     </div>
-                                <div class="panel-collapse collapse" id="collapseOne">
+                                <div id="collapseOne">
                                     <div class="panel-body">
                                         <ul class="messaging">
-                                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, beatae aliquid vero consequatur magnam facilis doloremque voluptatum modi! Ipsum saepe pariatur porro architecto dignissimos vitae blanditiis natus. Animi, quam, enim?</li>
-                                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, beatae aliquid vero consequatur magnam facilis doloremque voluptatum modi! Ipsum saepe pariatur porro architecto dignissimos vitae blanditiis natus. Animi, quam, enim?</li>
-                                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, beatae aliquid vero consequatur magnam facilis doloremque voluptatum modi! Ipsum saepe pariatur porro architecto dignissimos vitae blanditiis natus. Animi, quam, enim?</li>
-                                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, beatae aliquid vero consequatur magnam facilis doloremque voluptatum modi! Ipsum saepe pariatur porro architecto dignissimos vitae blanditiis natus. Animi, quam, enim?</li>
-                                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, beatae aliquid vero consequatur magnam facilis doloremque voluptatum modi! Ipsum saepe pariatur porro architecto dignissimos vitae blanditiis natus. Animi, quam, enim?</li>
-                                            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, beatae aliquid vero consequatur magnam facilis doloremque voluptatum modi! Ipsum saepe pariatur porro architecto dignissimos vitae blanditiis natus. Animi, quam, enim?</li>
+                                            <!--messages li-->
                                         </ul>
                                         </div>
                                         <div class="panel-footer">
@@ -212,7 +208,7 @@
                 </div>
                 <div class="col-md-2">
                         <br><br><br>
-                        <img class="banner img-responsive" src="images/banner/commercial.png">
+                        <img class="banner img-responsive" src="/images/banner/commercial.png">
                 </div>
             </div>
         </div>
@@ -224,19 +220,17 @@
 <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Quality Assurance </h3>
                         <ul>
                             <li>Sfica Simina</li>
-                            <li>Alin Ciupei</li>
                             <li>Raul Ciunt</li>
-                            <li>Peter Dan</li>
                         </ul>
                     </div>    
                 </div><!--/.col-md-3-->
 
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Java development </h3>
                         <ul>
@@ -248,17 +242,8 @@
                     </div>    
                 </div><!--/.col-md-3-->
         
-                <div class="col-md-3 footer-text col-sm-6">
-                    <div class="widget">
-                        <h3> Automation</h3>
-                        <ul>
-                            <li>Gogota Claudiu</li>
-                            <li>Sas Georgian</li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
                 
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Project management </h3>
                         <ul>
@@ -300,14 +285,14 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/scroll.js"></script>
-    <script src="js/zabuto_calendar.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/wow.min.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/zabuto_calendar.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/wow.min.js"></script>
     <script>
             $(document).ready(function() {
                 

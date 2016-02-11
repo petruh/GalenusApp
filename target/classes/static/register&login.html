@@ -8,21 +8,21 @@
     <title>Login | Register</title>
 	
 	<!-- core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon2.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/images/ico/favicon2.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 <body class="homepage">
@@ -37,10 +37,10 @@
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="http://www.skype.com/ro/" target="_blank"><i class="fa fa-skype"></i></a></li>
                             </ul>
                        </div>
                     </div>
@@ -57,7 +57,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
@@ -73,11 +73,17 @@
                             </ul>
                         </li>
                         <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>                        
+                        <li><a href="contact-us.html">Contact</a></li> 
+                        <li class="logout">
+                            <form th:action="@{/logout}" method="post">
+                                <input class="logout-button" type="submit" value="Sign Out" />
+                            </form>
+                        </li>
+                        <li class="session"></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right session-hide">
                             <li class="dropdown active" id="login-icon">
-                                <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="images/ico/login.png">Register / Login <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/ico/login.png">Register / Login <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li class="active"><a href="register&login.html">PATIENT - Register/Login</a></li>
                                     <li><a href="login.html">DOCTOR - Login</a></li>
@@ -114,7 +120,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="user.html" method="post" role="form" style="display: block;">
+								<form id="login-form" th:action="@{login}" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="username-client" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>
@@ -142,7 +148,10 @@
 										</div>
 									</div>
 								</form>
-								<form id="register-form" action="#" method="post" role="form" style="display: none;">
+								<form id="register-form" action="/register" method="post" role="form" style="display: none;">
+									<div class="form-group">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+									</div>
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
 									</div>
@@ -153,10 +162,10 @@
 										<input type="password" name="confirm-password" id="confirm-password" tabindex="3" class="form-control" placeholder="Confirm Password">
 									</div>
 									<div class="form-group">
-										<input type="text" name="full-name" id="full-name" tabindex="4" class="form-control" placeholder="Full Name">
+										<input type="text" name="firstName" id="firstName" tabindex="4" class="form-control" placeholder="First Name">
 									</div>
 									<div class="form-group">
-										<input type="text" name="occupation" id="occupation" tabindex="5" class="form-control" placeholder="Occupation">
+										<input type="text" name="lastName" id="lastName" tabindex="5" class="form-control" placeholder="lastName">
 									</div>
 									<div class="form-group">
 									    <i>  Date of birth   </i>
@@ -214,6 +223,11 @@
                                         
                                         <select name="bd-year" class="form-control bd-dropdown" tabindex="8">
                                         	<option> - Year - </option>
+                                        	<option value="1998">1998</option>
+                                        	<option value="1997">1997</option>
+                                        	<option value="1996">1996</option>
+                                        	<option value="1995">1995</option>
+                                        	<option value="1994">1994</option>
                                         	<option value="1993">1993</option>
                                         	<option value="1992">1992</option>
                                         	<option value="1991">1991</option>
@@ -265,7 +279,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-										<select name="select-doctor" class="form-control" tabindex="9">
+										<select name="doctor" class="form-control" tabindex="9">
                                         	<option> - Doctor to be registered with - </option>
                                         	<option value="doctora">Doctor A</option>
                                         	<option value="doctorb">Doctor B</option>
@@ -274,100 +288,34 @@
 									<div class="form-group">
 									    <fieldset tabindex="10">
 									        <legend>Allergies</legend>
-    										<div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
+    										<div class="checkbox-inline col-md-2">
+                                                  <label><input type="checkbox" value="1">Lactose</label>
                                             </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
+                                            <div class="checkbox-inline col-md-2">
+                                                  <label><input type="checkbox" value="2">Dust</label>
                                             </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
+                                            <div class="checkbox-inline col-md-2">
+                                                  <label><input type="checkbox" value="3">Polen</label>
                                             </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
+                                            <div class="checkbox-inline col-md-2">
+                                                  <label><input type="checkbox" value="4">No allergies</label>
                                             </div>
                                         </fieldset>
 									</div>
 									<div class="form-group">
 									    <fieldset tabindex="11">
 									        <legend>Cronic disease</legend>
-    										<div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
+    										<div class="checkbox-inline col-md-2">
+                                                  <label><input type="checkbox" value="1">Diabetis</label>
                                             </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
+                                            <div class="checkbox-inline col-md-2">
+                                                  <label><input type="checkbox" value="2">AIDS</label>
                                             </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
+                                            <div class="checkbox-inline col-md-2">
+                                                  <label><input type="checkbox" value="3">Heart condition</label>
                                             </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
-                                            </div>
-                                            <div class="checkbox-inline col-md-3">
-                                                  <label><input type="checkbox" value="">Option 1</label>
+                                            <div class="checkbox-inline col-md-2">
+                                                  <label><input type="checkbox" value="4">No cronic disease</label>
                                             </div>
                                         </fieldset>
 									</div>
@@ -404,19 +352,17 @@
        <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Quality Assurance </h3>
                         <ul>
                             <li>Sfica Simina</li>
-                            <li>Alin Ciupei</li>
                             <li>Raul Ciunt</li>
-                            <li>Peter Dan</li>
                         </ul>
                     </div>    
                 </div><!--/.col-md-3-->
 
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Java development </h3>
                         <ul>
@@ -428,17 +374,8 @@
                     </div>    
                 </div><!--/.col-md-3-->
         
-                <div class="col-md-3 footer-text col-sm-6">
-                    <div class="widget">
-                        <h3> Automation</h3>
-                        <ul>
-                            <li>Gogota Claudiu</li>
-                            <li>Sas Georgian</li>
-                        </ul>
-                    </div>    
-                </div><!--/.col-md-3-->
                 
-                <div class="col-md-2 footer-text col-sm-6">
+                <div class="col-md-3 footer-text col-sm-6">
                     <div class="widget">
                         <h3> Project management </h3>
                         <ul>
@@ -480,13 +417,13 @@
         </div>
     </footer><!--/#footer-->
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/scroll.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/wow.min.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/wow.min.js"></script>
     <script>
             $(document).ready(function() {
                  $(".dropdown-toggle").dropdown();
