@@ -255,7 +255,7 @@ public class JDBCUserDAO implements UserDAO<User> {
 	public User findByUsername(String username) {
 		List<User> result = new LinkedList<>();
 		try (Connection connection = newConnection();
-				ResultSet rs = connection.createStatement().executeQuery("select * from users where username = '" + username + "' or email ='" + username + "'")) {
+				ResultSet rs = connection.createStatement().executeQuery("select * from users where user_name = '" + username + "' or email ='" + username + "'")) {
 
 			while (rs.next()) {
 				result.add(extractUser(rs));
