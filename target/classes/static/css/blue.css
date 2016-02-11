@@ -1,0 +1,68 @@
+
+/* DOSSIER BACKGROUND */
+/* ----------------------------------------- */
+
+#wrapper {
+	margin:0 auto;
+	margin-top:60px;
+	margin-bottom:100px;
+	margin-left:5%;
+}
+
+.wrapper-top {
+	height:19px;
+	margin:0 auto;
+	background-image:url(../images/btop.jpg);
+	background-repeat:no-repeat;
+}
+
+.wrapper-mid {
+	margin:0 auto;
+	background-image:url(../images/bmid.jpg);
+	background-repeat: repeat-y;
+	padding-bottom:40px;
+}
+
+.wrapper-bottom {
+	height:22px;
+	padding:0;
+	margin:0 auto;
+	background-image:url(../images/bbottom.jpg);
+	background-repeat:no-repeat;
+}
+
+/* PAPER BACKGROUND */
+/* ----------------------------------------- */
+
+#paper {
+	margin:0 auto;
+	margin-left:5%;
+}
+
+.paper-top {
+	margin:0 auto;
+	background-image:url(../images/ptop.jpg);
+	background-repeat:no-repeat;
+	height:126px;
+}
+
+#paper-mid {
+	margin:0 auto;
+	background-image:url(../images/pmid.jpg);
+	background-repeat:repeat-y;
+	display:block;
+	padding:0;
+	overflow: hidden;
+	padding-bottom:75px;
+	padding-top:7px;
+}
+
+.paper-bottom {
+	height:18px;
+	margin:0 auto;
+	background-image:url(../images/pbottom.jpg);
+	background-repeat:no-repeat;
+}
+
+/* ENTRIES */
+/* ----------------------------------------- */

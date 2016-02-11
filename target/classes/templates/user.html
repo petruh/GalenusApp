@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>User page</title>
+	
+	<!-- core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/zabuto_calendar.min.css">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="/images/ico/favicon2.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body class="homepage">
+
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        <div class="top-number"><p><i class="fa fa-phone-square"></i>  0040 264 58913455</p></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                       <div class="social">
+                            <ul class="social-share">
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="http://www.skype.com/ro/" target="_blank"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Doctors <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="doctora.html">Doctor A</a></li>
+                                <li><a href="doctorb.html">Doctor B</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Blog</a></li> 
+                        <li><a href="contact-us.html">Contact</a></li> 
+                        <li class="logout">
+                            <form th:action="@{/logout}" method="post">
+                                <input class="logout-button" type="submit" value="Sign Out" />
+                            </form>
+                        </li>
+                        <li class="session"></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right session-hide">
+                            <li class="dropdown active" id="login-icon">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/ico/login.png">Register / Login <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li  class="active"><a href="register&login.html">PATIENT - Register/Login</a></li>
+                                    <li><a href="login.html">DOCTOR - Login</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+            
+            <!----------------------------------------USER PAGE------------------------------------->
+            
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="userpage-doctors">
+                    <div class="col-md-6">
+                        <div class="thumbnail">
+                        <img src="/images/ico/doctors.png" alt="ALT NAME" class="img-responsive" />
+                            <div class="caption">
+                                 <h3>Doctor A/B</h3>
+                                <p>....specialist</p>
+                                <p align="center"><a href="doctora.html" class="btn btn-primary btn-block">Details</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-12">
+                                <p align="center"><a href="edituser.html" class="btn btn-primary btn-block send-msg">Edit my profile</a>
+                                <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: pre-wrap; background-color: rgb(255, 255, 255);"></span>
+                        </div>
+                        <div class="col-md-12">
+                                <p align="center"><a href="" class="btn btn-primary btn-block send-msg">View appoitments</a>
+                                <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: pre-wrap; background-color: rgb(255, 255, 255);"></span>
+                        </div>
+                        <div class="col-md-12">
+                                <p align="center"><a class="btn btn-primary btn-block send-msg show-calendar">Make an appoitment</a>
+                                <span style="font-family: Monaco, Menlo, Consolas, 'Courier New', monospace; font-size: 13px; line-height: 18px; white-space: pre-wrap; background-color: rgb(255, 255, 255);"><div id="calendar"></div></span>
+                        </div>
+                        
+                        <div class="col-md-12 hide-photo">
+                            <img class="img-responsive" src="/images/appoitment2.jpg">
+                        </div>
+                        <div class="col-md-12 messagepop pop">
+                          <form method="post" id="new_message" action="#">
+                            <h3>Available hours</h3>
+                              <label>
+                                <input type="radio" class="radio" value="8" name="time" />8:00 - 9:00</label>
+                              
+                              <label>
+                                <input type="radio" class="radio" value="9" name="time" />9:00 - 10:00</label>
+                              
+                              <label>
+                                <input type="radio" class="radio" value="10" name="time" />10:00 - 11:00</label>
+                              <label>
+                                <input type="radio" class="radio" value="11" name="time" />11:00 - 12:00</label>
+                              <label>
+                                <input type="radio" class="radio" value="12" name="time" />12:00 - 13:00</label>
+                              <label>
+                                <input type="radio" class="radio" value="13" name="time" />13:00 - 14:00</label>
+                              <label>
+                                <input type="radio" class="radio" value="14" name="time" />14:00 - 15:00</label>
+                              <label>
+                                <input type="radio" class="radio" value="15" name="time" />15:00 - 16:00</label>
+                              <label>
+                                <input type="radio" class="radio" value="16" name="time" />16:00 - 17:00</label>
+                              <label>
+                                
+                                <input type="radio" class="radio" value="2.3" name="time" />16:30 AM - 17:00AM</label>  
+                                <p><input type="submit" value="Finish appoitment!" name="commit" class="btn-primary" id="message_submit"/> or <a class="close" href="/">Cancel</a></p>
+                          </form>
+                        </div>
+
+                    <!--http://www.jqueryscript.net/time-clock/jQuery-Ajax-enabled-Month-Calendar-Plugin-with-Bootstrap-Zabuto-Calendar.html-->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <h2>Conversations with Doctor A/B</h2>
+                        <div class="row">
+                            <div id="imaginary_container" class="col-md-6"> 
+                                <div class="input-group stylish-input-group">
+                                    <input type="text" class="form-control"  placeholder="Search in conversations.." >
+                                    <span class="input-group-addon">
+                                        <button type="submit">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>  
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                                   <div class="col-md-12">
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading" id="accordion">
+                                        <span class="glyphicon glyphicon-comment message-icon"></span><span class="icon-text">Send a message to Doctor A/B</span>
+                                        <div class="pull-right">
+                                            <a href="user.html"><span class="glyphicon glyphicon-refresh message-icon" style="color:white"></span><span id="refresh-page">Refresh page</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                <div id="collapseOne">
+                                    <div class="panel-body">
+                                        <ul class="messaging">
+                                            <!--messages li-->
+                                        </ul>
+                                        </div>
+                                        <div class="panel-footer">
+                                            <div class="input-group">
+                                                <input id="message-input" class="col-md-10" type="textarea" placeholder="Type your message here..." />
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-warning btn-sm" id="btn-chat">
+                                                        Send message</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                </div>
+                <div class="col-md-2">
+                        <br><br><br>
+                        <img class="banner img-responsive" src="/images/banner/commercial.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+            
+            <!----FOOTER---->
+            
+<section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="row">
+                <div class="col-md-3 footer-text col-sm-6">
+                    <div class="widget">
+                        <h3> Quality Assurance </h3>
+                        <ul>
+                            <li>Sfica Simina</li>
+                            <li>Raul Ciunt</li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 footer-text col-sm-6">
+                    <div class="widget">
+                        <h3> Java development </h3>
+                        <ul>
+                            <li>Iulian Todor</li>
+                            <li>Mihai Savin</li>
+                            <li>Petru Hangiu</li>
+                            <li>Florin Tompea</li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+        
+                
+                <div class="col-md-3 footer-text col-sm-6">
+                    <div class="widget">
+                        <h3> Project management </h3>
+                        <ul>
+                            <li>Dana Toma</li>
+                            <li>Florin Domuta</li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+                
+                <div class="col-md-3 footer-text col-sm-6">
+                    <div class="widget">
+                        <h3> Web development </h3>
+                        <ul>
+                            <li>Dobri Andras</li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+    
+    <a href="#0" class="cd-top">Top</a>
+    
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2016 GALENUS. All Rights Reserved.
+                </div>
+                <div>
+                <ul class="social pull-right">
+                    <li id="facebook"> <a href="https://www.facebook.com" target="_blank"> <i class=" fa fa-facebook">   </i> </a> </li>
+                    <li id="twitter"> <a href="https://twitter.com" target="_blank"> <i class="fa fa-twitter">   </i> </a> </li>
+                    <li id="skype"> <a href="http://www.skype.com/ro/" target="_blank"> <i class="fa fa-skype">   </i> </a> </li>
+                    <li id="linkedin"> <a href="https://www.linkedin.com/" target="_blank"> <i class="fa fa-linkedin">   </i> </a> </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/zabuto_calendar.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/wow.min.js"></script>
+    <script>
+            $(document).ready(function() {
+                
+                $("#calendar").zabuto_calendar();
+                
+                $(".zabuto_calendar").css("display", "none");
+                $(".show-calendar").click(function(){
+                    $(".zabuto_calendar").toggle("slow");
+                    $(".hide-photo").toggle("slow");
+                    $(".show-calendar").hide();
+                });
+                
+                /*pop-up function after click*/ 
+                function deselect(e) {
+                  $('.pop').slideFadeToggle(function() {
+                    e.removeClass('selected');
+                  });    
+                }
+                
+                
+                  $('.table tbody .calendar-dow td:nth-child(-n+5) .day').on('click', function() {
+                    if($(this).hasClass('selected')) {
+                      deselect($(this));               
+                    } else {
+                      $(this).addClass('selected');
+                      $('.pop').slideFadeToggle();
+                    }
+                    return false;
+                  });
+                
+                  $('.close').on('click', function() {
+                    deselect($('.calendar-dow td'));
+                    return false;
+                  });
+                
+                
+                $.fn.slideFadeToggle = function(easing, callback) {
+                  return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
+                };
+                
+                
+        /*        var now = new Date();
+                var year = now.getFullYear();
+                var month = now.getMonth() + 1;
+                var settings = {
+                    language: false,
+                    year: year,
+                    month: month,
+                    show_previous: true,
+                    show_next: true,
+                    cell_border: true,
+                    today: true,
+                    show_days: true,
+                    weekstartson: 1,
+                    nav_icon: false, // object: prev: string, next: string
+                    data: true,
+                    ajax: {
+                        url: "user.html",
+                        modal: true,
+                    }, // object: url: string, modal: boolean,
+                    legend:false
+                        , // object array, [{type: string, label: string, classname: string}]
+                    action: function () {
+                         return myDateFunction(this.id, true);
+                    },
+                    action_nav: function () {
+                        return myNavFunction(this.id);
+                    },
+                };
+                
+                
+                
+                function myDateFunction(id, fromModal) {
+                    $("#date-popover").hide();
+                    if (fromModal) {
+                        $("#" + id + "_modal").modal("hide");
+                    }
+                    var date = $("#" + id).data("date");
+                    var hasEvent = $("#" + id).data("hasEvent");
+                    if (hasEvent && !fromModal) {
+                        return false;
+                    }
+                    $("#date-popover-content").html('You clicked on date ' + date);
+                    $("#date-popover").show();
+                    return true;
+                }
+
+                function myNavFunction(id) {
+                    $("#date-popover").hide();
+                    var nav = $("#" + id).data("navigation");
+                    var to = $("#" + id).data("to");
+                    console.log('nav ' + nav + ' to: \ ' + to.month + '/' + to.year);
+                }*/
+                });
+                </script>
+</body>
+</html>

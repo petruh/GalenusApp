@@ -1,0 +1,10 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<h1>Form</h1>
+    <form action="#" th:action="@{/appointment}" th:object="${appointment}" method="post">
+    	<p>Details: <input type="text" th:field="*{details}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</body>
+</html>
