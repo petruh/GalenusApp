@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Login</title>
+    <title>About us</title>
 	
 	<!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -63,10 +63,10 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
+                        <li  class="active"><a href="about-us.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle  active" data-toggle="dropdown">Doctors <i class="fa fa-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Doctors <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="doctora.html">Doctor A</a></li>
                                 <li><a href="doctorb.html">Doctor B</a></li>
@@ -82,11 +82,11 @@
                         <li class="session"></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right session-hide">
-                            <li class="dropdown active" id="login-icon">
+                            <li class="dropdown" id="login-icon">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/ico/login.png">Register / Login <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="register&login.html">PATIENT - Register/Login</a></li>
-                                    <li class="active"><a href="login.html">DOCTOR - Login</a></li>
+                                    <li><a href="login.html">DOCTOR - Login</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -95,70 +95,141 @@
         </nav><!--/nav-->
 		
     </header><!--/header-->
-            
-            
-            <!----------------------------------------Register/login PAGE------------------------------------->
-            
-    <div class="container content">
-    	<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-login">
-					<div class="panel-heading">
-						<div class="row">
-							<h2  id="logind">DOCTOR</h2>
-						</div>
-						<div class="row">
-							<ul class="col-xs-12">
-								<li class="active" id="login-form-link"><h2 id="loginh">Login</h2></li>
-							</ul>
-						</div>
-						<hr>
+
+    <section id="about-us">
+        <div class="container">
+			<div class="center wow fadeInDown">
+				<h2>About Galenus</h2>
+			</div>
+			
+			<!-- about us slider -->
+			<div id="about-slider">
+				<div id="carousel-slider" class="carousel slide" data-ride="carousel">
+					<!-- Indicators -->
+				  	<ol class="carousel-indicators visible-xs">
+					    <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+					    <li data-target="#carousel-slider" data-slide-to="1"></li>
+					    <li data-target="#carousel-slider" data-slide-to="2"></li>
+					    <li data-target="#carousel-slider" data-slide-to="3"></li>
+					    <li data-target="#carousel-slider" data-slide-to="4"></li>
+					    <li data-target="#carousel-slider" data-slide-to="5"></li>
+					    <li data-target="#carousel-slider" data-slide-to="6"></li>
+					    <li data-target="#carousel-slider" data-slide-to="7"></li>
+					    <li data-target="#carousel-slider" data-slide-to="8"></li>
+					    <li data-target="#carousel-slider" data-slide-to="9"></li>
+				  	</ol>
+
+					<div class="carousel-inner">
+						<div class="item active white">
+							<img src="/images/echipa/simina.jpg" class="img-responsive" alt=""> 
+					   </div>
+					   <div class="item white">
+							<img src="/images/echipa/dana.jpg" class="img-responsive" alt=""> 
+					   </div> 
+					   <div class="item white">
+							<img src="/images/echipa/florin.JPG" class="img-responsive" alt=""> 
+					   </div> 
+					   <div class="item white">
+							<img src="/images/echipa/raul.jpg" class="img-responsive" alt=""> 
+					   </div>
+					   <div class="item white">
+							<img src="/images/echipa/iulian.jpg" class="img-responsive" alt=""> 
+					   </div>
+					   <div class="item white">
+							<img src="/images/echipa/mihai1.jpg" class="img-responsive" alt=""> 
+					   </div>
+					   <div class="item white">
+							<img src="/images/echipa/mihai2.png" class="img-responsive" alt=""> 
+					   </div>
+					   <div class="item white">
+							<img src="/images/echipa/petru.jpg" class="img-responsive" alt=""> 
+					   </div>
+					   <div class="item white">
+							<img src="/images/echipa/andras.JPG" class="img-responsive" alt=""> 
+					   </div>
 					</div>
 					
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-12">
-								<form id="login-form" action="doctor.html" method="post" role="form" style="display: block;">
-									<div class="form-group">
-										<input type="text" name="username-doctor" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password-doctor" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group text-center">
-										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-										<label for="remember"> Remember Me</label>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-lg-12">
-												<div class="text-center">
-													<a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
+					<a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
+						<i class="fa fa-angle-left"></i> 
+					</a>
+					
+					<a class=" right carousel-control hidden-xs"href="#carousel-slider" data-slide="next">
+						<i class="fa fa-angle-right"></i> 
+					</a>
+				</div> <!--/#carousel-slider-->
+			</div><!--/#about-slider-->
+			
+			
+			<!-- Our Skill -->
+			<div class="skill-wrap clearfix">
+			
+				<div class="center wow fadeInDown">
+					<h2>Our Skills</h2>
+				</div>
+				
+				<div class="row">
+		                
+		            <div class="col-sm-2">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+							<div class="web-skill">                                   
+								<p><em>12%</em></p>
+								<p>WEB</p>
 							</div>
 						</div>
 					</div>
+					
+					 <div class="col-sm-2">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+							<div class="pm-skill">                                  
+								<p><em>25%</em></p>
+								<p>PM</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-2">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+							<div class="java-skill">                                    
+								<p><em>37%</em></p>
+								<p>JAVA</p>
+							</div>
+						</div>
+					</div>
+					
+					 <div class="col-sm-2">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+							<div class="qa-skill">
+								<p><em>25%</em></p>
+								<p>QA</p>                                     
+							</div>
+						</div>
+					</div>      
+				
+				    <div class="col-sm-2">
+						<div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+							<div class="doctor-skill">
+								<p><em>1%</em></p>
+								<p>Doctor</p>                                     
+							</div>
+						</div>
+					</div> 
+				        
 				</div>
-			</div>
-		</div>
-	</div>
-            
+	
+            </div><!--/.our-skill-->
+			
 
-            
-            <!----FOOTER---->
-            
-        <section id="bottom">
+			<!-- our-team -->
+			<div class="team">
+				<div class="center wow fadeInDown">
+					<h2>Galenus team</h2>
+				</div>
+
+			</div><!--section-->
+		</div><!--/.container-->
+    </section><!--/about-us-->
+	
+    <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
                 <div class="col-md-3 footer-text col-sm-6">
@@ -233,26 +304,5 @@
     <script src="/js/scroll.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/wow.min.js"></script>
-    <script>
-            $(document).ready(function() {
-                 $(".dropdown-toggle").dropdown();
-                 
-                $('#login-form-link').click(function(e) {
-            		$("#login-form").delay(100).fadeIn(100);
-             		$("#register-form").fadeOut(100);
-            		$('#register-form-link').removeClass('active');
-            		$(this).addClass('active');
-            		e.preventDefault();
-            	});
-            	$('#register-form-link').click(function(e) {
-            		$("#register-form").delay(100).fadeIn(100);
-             		$("#login-form").fadeOut(100);
-            		$('#login-form-link').removeClass('active');
-            		$(this).addClass('active');
-            		e.preventDefault();
-            	});
-            
-            });
-    </script>
 </body>
 </html>

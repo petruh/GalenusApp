@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Doctor A</title>
+	
+	<!-- core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/animate.min.css" rel="stylesheet">
+    <link href="/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+    <link href="/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="/images/ico/favicon2.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body class="homepage">
+
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-xs-4">
+                        <div class="top-number"><p><i class="fa fa-phone-square"></i>  0040 264 58913455</p></div>
+                    </div>
+                    <div class="col-sm-6 col-xs-8">
+                       <div class="social">
+                            <ul class="social-share">
+                                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="http://www.skype.com/ro/" target="_blank"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+        </div><!--/.top-bar-->
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="/images/logo.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li class="dropdown active">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Doctors <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="doctora.html">Doctor A</a></li>
+                                <li><a href="doctorb.html">Doctor B</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blog.html">Blog</a></li> 
+                        <li><a href="contact-us.html">Contact</a></li>  
+                        <li class="logout">
+                            <form th:action="@{/logout}" method="post">
+                                <input class="logout-button" type="submit" value="Sign Out" />
+                            </form>
+                        </li>
+                        <li class="session"></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right session-hide">
+                        <li class="dropdown" id="login-icon">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/ico/login.png">Register / Login <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="register&login.html">PATIENT - Register/Login</a></li>
+                                <li><a href="login.html">DOCTOR - Login</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+		
+    </header><!--/header-->
+    
+    <!------------------------------------------------------CV DOCTOR--------------------------------------->
+    
+    <div class="container">
+        <div class="col-md-12">
+            <div id="cv-content">
+                     
+                 <div id="page-wrap" class="col-md-12">
+            
+                    <div id="contact-info" class="vcard col-md-12">
+                        <h1 class="fn">Doctor A</h1>
+                    <!-- Microformats! -->
+                        <div class="col-md-6"><img src="/images/cv-doctora.jpg" alt="" id="pic"/></div>
+                        <div class="contact-cv col-md-6">
+                            <h2>Dr A Consultant ENT Surgeon</h2>
+                            <h3>71 Mill Court, Ashford, Kent TN24 8DN</h3>
+                            <p>
+                                Cell: <span class="tel">132-23154-31315</span><br />
+                                Email: <a class="email">doctora@galenus.com</a>
+                            </p>
+                        </div>
+                         
+                       
+                    </div>
+                        
+                    <div id="objective" class="col-md-12">
+                    </div>
+                
+                    <div class="clear"></div>
+                
+                    <dl>
+                        <dd class="clear col-md-6"></dd>
+                        
+                        <dt class="col-md-4">Profile Summary</dt>
+                        <dd class="col-md-8">
+                            <ul>
+                                <li>Accredited Consultant Ear Nose & Throat Specialist</li>
+                                <li>Over 30 years clinical experience</li>
+                                <li>Established independent and NHS practice South East England since 1993</li>
+                                <li>Strong academic background in evidence based medicine</li>
+                                <li>Skilled in general otolaryngology, adults and children</li>
+                                <li>Special interests in otology, rhinology and laser surgery</li>
+                                <li>Lifetime commitment to clinical excellence</li>
+                            </ul>
+                        </dd>
+                        
+                        <dd class="clear col-md-6"></dd>
+                        
+                        <dt  class="col-md-4">Personal details</dt>
+                        <dd class="col-md-8">
+                            <h2>Full Name</h2>
+                            <p>A</p>
+                            
+                            <h2>Nationality</h2>
+                            <p>British</p>
+                            
+                            <h2>Marital status</h2>
+                            <p>Married, three grown-up children and four grandchildren</p>
+                        </dd>
+                        
+                        <dd class="clear col-md-8"></dd>
+                        
+                        <dt  class="col-md-4">Professional qualifications</dt>
+                        <dd class="col-md-8"> 
+                            <h2>UK GMC Registration</h2>
+                            <ul>
+                                <li>Fully Trained Specialist (Otolaryngology) Certificate No. 2719566 </li>
+                                <li>Revalidated 19 February 2014</li>
+                                <li>Revalidation due date 18 February 2019</li>
+                            </ul>
+                            
+                        </dd>
+                        
+                        <dd class="clear col-md-8"></dd>
+                        
+                        <dt  class="col-md-4">Medical Qualifications</dt>
+                        <dd class="col-md-8"> 
+                            <h2>1996</h2>
+                            <span>Master of Surgery (University of London)</span>
+                            
+                             <h2>1993</h2>
+                            <span>Accredited Trained Specialist in Otolaryngology (Royal College of Surgeons of England)</span>  
+                            
+                             <h2>1988</h2>
+                            <span>Fellowship of the Royal College of Surgeons of England (Otolaryngology)</span>  
+                            
+                             <h2>1981</h2>
+                            <span>Bachelor of Medicine Bachelor of Surgery St Thomas’ Hospital Medical School University of London</span>  
+                            
+                             <h2>1978</h2>
+                            <span>Bachelor of Science (Pharmacology) University of London</span>  
+                    
+                        </dd>
+                        
+                        <dd class="clear col-md-8"></dd>
+                        <dd class="clear col-md-6"></dd>
+                        
+                        <dt class="col-md-4">Specialist skills</dt>
+</dt>
+                        <dd class="col-md-8">
+                            <ul>
+                                <li>General Otolaryngology (Adult & Paediatric)</li>
+                                <li>Otology (including complex middle ear surgery, stapes surgery and BAHA implants)</li>
+                                <li>Rhinology (including functional endoscopic sinus surgery and cosmetic rhinoplasty)</li>
+                                <li>LASER surgery</li>
+                                <li>Head & Neck Surgery</li>
+                                <li>Facial Plastic Surgery</li>
+                                <li>Endoscopy</li>
+                                <li>Clinical governance, appraisal & audit</li>
+                                <li>Research & evidence based medicine</li>
+                                <li>Clinical excellence</li>
+                                <li>Teaching & training skills</li>
+                                <li>Management & administration</li>
+                            </ul>
+                        </dd>
+                        
+                        <dd class="clear col-md-6"></dd>
+                        
+                        <dd class="clear col-md-8"></dd>
+                        
+                        <dt  class="col-md-4">Career history</dt>
+                        <dd class="col-md-8"> 
+                            <h2>Aug 1993 – 31 Aug 2014</h2>
+                            <span>Consultant ENT Surgeon East Kent University Hospitals NHS Foundation Trust</span>
+                            
+                             <h2>1990 - 1993</h2>
+                            <span>Senior ENT Registrar Royal Hallamshire & Childrens Hospitals Sheffield inc. 12 months rotation Doncaster Royal Infirmary</span>  
+                            
+                             <h2>1982 - 1990</h2>
+                            <span>Senior House Officer ENT Royal National Throat Nose & Ear Hospital London</span>  
+                            
+                             <h2>1980 - 1982</h2>
+                            <span>House Officer ENT St Thomas’s Hospital London</span>  
+                            
+                             <h2>1975 - 1980</h2>
+                            <span>St. Thomas’s Hospital Medical School, University of London</span>  
+                            
+                            <h2>1978</h2>
+                            <span>Laboratories Sandoz AG, Basle, Switzerland (Research Assistant)</span>
+                            
+                            <h2>1980</h2>
+                            <span>Medical School Distinction Hadden Prize (microbiology) St Thomas’s</span>
+                            
+                            <h2>1968 - 1976</h2>
+                            <span>St. Joseph’s Grammar Technical School, Hebburn, County Durham</span>
+                        
+                    </dl>
+                    
+                    <dd class="clear col-md-8"></dd>
+                    <dd class="clear col-md-8"></dd>
+                    <div class="clear"></div>
+                    
+                    <dt class="col-md-4">Important publications</dt>
+                        <dd class="col-md-8">
+                            <ul>
+                                <li>Dhillon RS and Fairley JW. (1989)
+Multiple Choice Questions in Otolaryngology – with explanatory answers.
+Macmillan Press, London.</li>
+                                <li>Fairley JW and Dhillon RS (1999)
+Multiple Choice Questions in Otolaryngology (2nd Edition)
+Butterworth Heinemann, Oxford</li>
+                                <li>Fairley JW. (1989)
+Sinusitis
+Health Information Network, Maidenhead, Berks, UK.</li>
+                            </ul>
+                        </dd>    
+                </div>   
+            </div>
+        </div>
+    </div>
+    
+    <section id="bottom">
+        <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+            <div class="row">
+                <div class="col-md-3 footer-text col-sm-6">
+                    <div class="widget">
+                        <h3> Quality Assurance </h3>
+                        <ul>
+                            <li>Sfica Simina</li>
+                            <li>Raul Ciunt</li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+
+                <div class="col-md-3 footer-text col-sm-6">
+                    <div class="widget">
+                        <h3> Java development </h3>
+                        <ul>
+                            <li>Iulian Todor</li>
+                            <li>Mihai Savin</li>
+                            <li>Petru Hangiu</li>
+                            <li>Florin Tompea</li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+        
+                
+                <div class="col-md-3 footer-text col-sm-6">
+                    <div class="widget">
+                        <h3> Project management </h3>
+                        <ul>
+                            <li>Dana Toma</li>
+                            <li>Florin Domuta</li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+                
+                <div class="col-md-3 footer-text col-sm-6">
+                    <div class="widget">
+                        <h3> Web development </h3>
+                        <ul>
+                            <li>Dobri Andras</li>
+                        </ul>
+                    </div>    
+                </div><!--/.col-md-3-->
+            </div>
+        </div>
+    </section><!--/#bottom-->
+    
+    <a href="#0" class="cd-top">Top</a>
+    
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2016 GALENUS. All Rights Reserved.
+                </div>
+                <div>
+                <ul class="social pull-right">
+                    <li id="facebook"> <a href="https://www.facebook.com" target="_blank"> <i class=" fa fa-facebook">   </i> </a> </li>
+                    <li id="twitter"> <a href="https://twitter.com" target="_blank"> <i class="fa fa-twitter">   </i> </a> </li>
+                    <li id="skype"> <a href="http://www.skype.com/ro/" target="_blank"> <i class="fa fa-skype">   </i> </a> </li>
+                    <li id="linkedin"> <a href="https://www.linkedin.com/" target="_blank"> <i class="fa fa-linkedin">   </i> </a> </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.prettyPhoto.js"></script>
+    <script src="/js/jquery.isotope.min.js"></script>
+    <script src="/js/scroll.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/wow.min.js"></script>
+</body>
+</html>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Login</title>
+    <title>Blog</title>
 	
 	<!-- core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -66,14 +66,14 @@
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle  active" data-toggle="dropdown">Doctors <i class="fa fa-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Doctors <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="doctora.html">Doctor A</a></li>
                                 <li><a href="doctorb.html">Doctor B</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>
+                        <li class="active"><a href="blog.html">Blog</a></li> 
+                        <li><a href="contact-us.html">Contact</a></li>   
                         <li class="logout">
                             <form th:action="@{/logout}" method="post">
                                 <input class="logout-button" type="submit" value="Sign Out" />
@@ -82,11 +82,11 @@
                         <li class="session"></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right session-hide">
-                            <li class="dropdown active" id="login-icon">
+                            <li class="dropdown" id="login-icon">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="/images/ico/login.png">Register / Login <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="register&login.html">PATIENT - Register/Login</a></li>
-                                    <li class="active"><a href="login.html">DOCTOR - Login</a></li>
+                                    <li><a href="login.html">DOCTOR - Login</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -95,70 +95,87 @@
         </nav><!--/nav-->
 		
     </header><!--/header-->
-            
-            
-            <!----------------------------------------Register/login PAGE------------------------------------->
-            
-    <div class="container content">
-    	<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-login">
-					<div class="panel-heading">
-						<div class="row">
-							<h2  id="logind">DOCTOR</h2>
-						</div>
-						<div class="row">
-							<ul class="col-xs-12">
-								<li class="active" id="login-form-link"><h2 id="loginh">Login</h2></li>
-							</ul>
-						</div>
-						<hr>
-					</div>
-					
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-12">
-								<form id="login-form" action="doctor.html" method="post" role="form" style="display: block;">
-									<div class="form-group">
-										<input type="text" name="username-doctor" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password-doctor" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group text-center">
-										<input type="checkbox" tabindex="3" class="" name="remember" id="remember">
-										<label for="remember"> Remember Me</label>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
-											</div>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-lg-12">
-												<div class="text-center">
-													<a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
-												</div>
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-            
 
-            
-            <!----FOOTER---->
-            
-        <section id="bottom">
+    <section id="blog" class="container">
+        <div class="center">
+            <h2>Blog</h2>
+        </div>
+
+        <div class="blog">
+            <div class="row">
+                 <div class="col-md-8">
+                    <div class="blog-item">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-2 text-center">
+                                <div class="entry-meta">
+                                    <span id="publish_date">02  FEB</span>
+                                    <span><i class="fa fa-user"></i> <a>Dr. Fischer</a></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-10 col-sm-8 blog-content">
+                                <a href="blog-item1.html"><img class="img-responsive col-sm-12 img-blog" src="/images/blog/blog1s.jpg" width="100%" alt="" /></a>
+                                <h2><a href="blog-item1.html">POSTERIOR EPISTAXIS</a></h2>
+                                <h3>Epistaxis, or nosebleed, is a common problem that we see and treat in our practice.  60% of the population will suffer a nosebleed at some time in their life.  Most the bleeding is anterior, or from the front of the nose.  This is usually treated in the office with simple cautery or packing.</h3>
+                                <a class="btn btn-primary readmore" href="blog-item1.html">Read More <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>    
+                    </div><!--/.blog-item-->
+                        
+                    <div class="blog-item">
+                        <div class="row">
+                             <div class="col-xs-6 col-sm-2 text-center">
+                                <div class="entry-meta"> 
+                                    <span id="publish_date">05  FEB</span>
+                                    <span><i class="fa fa-user"></i> <a>Dr. Fischer</a></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-10 col-sm-8 blog-content">
+                                <a href="blog-item2.html"><img class="img-responsive col-sm-12 img-blog" src="/images/blog/blog2s.jpg" width="100%" alt="" /></a>
+                                <h2><a href="blog-item2.html">SUMMER’S EAR: HOW TO PREVENT SEASONAL EAR CONDITIONS</a></h2>
+                                <h3>Summertime brings lots of great outdoor activities like swimming, waterskiing and camping. While these are all wonderful past-times, each can carry a risk for an ear condition. Don’t worry: all are easily preventable and treatable if you follow these simple guidelines.</h3>
+                                <a class="btn btn-primary readmore" href="blog-item2.html">Read More <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>    
+                    </div><!--/.blog-item-->
+                        
+                    <div class="blog-item">
+                        <div class="row">
+                             <div class="col-xs-6 col-sm-2 text-center">
+                                <div class="entry-meta"> 
+                                    <span id="publish_date">10  FEB</span>
+                                    <span><i class="fa fa-user"></i> <a>Dr. Fischer</a></span>
+                                </div>
+                            </div>
+                            <div class="col-xs-10 col-sm-8 blog-content">
+                                <a href="blog-item3.html"><img class="img-responsive col-sm-12 img-blog" src="/images/blog/blog3s.jpg" width="100%" alt="" /></a>
+                                <h2><a href="blog-item3.html">STREP THROAT</a></h2>
+                                <h3>Strep throat is a contagious disease, which means you catch it from another person. It is caused by infection with bacteria called group A streptococci (pronounced: strep-toe-KAH-kye) bacteria, and it's very common among teens. In fact, strep bacteria cause almost a third of all sore throats. The symptoms of strep throat include sore throat, fever, and stomach pain, along with red and swollen tonsils.</h3>
+                                <a class="btn btn-primary readmore" href="blog-item3.html">Read More <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>    
+                    </div><!--/.blog-item-->
+                        
+                </div><!--/.col-md-8-->
+
+                <aside class="col-md-4">
+                    <div class="col-md-12">
+                        <br><br><br>
+                        <a href="http://www.mayoclinic.org/" target="_blank"><img class="img-responsive" src="/images/banner/commercial3.jpg"></a>
+                    </div> 
+                    <div class="col-md-12">
+                        <br><br><br>
+                        <a href="http://www.stelizabeth.com/" target="_blank"><img class="img-responsive" src="/images/banner/commercial4.jpg"></a>
+                    </div>  
+                    <div class="col-md-12">
+                        <br><br><br>
+                        <a href="https://www.zumba.com/en-US" target="_blank"><img class="banner img-responsive" src="/images/banner/commercial.png"></a>
+                    </div>
+    			</aside>  
+            </div><!--/.row-->
+        </div>
+    </section><!--/#blog-->
+
+    <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
                 <div class="col-md-3 footer-text col-sm-6">
@@ -233,26 +250,5 @@
     <script src="/js/scroll.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/wow.min.js"></script>
-    <script>
-            $(document).ready(function() {
-                 $(".dropdown-toggle").dropdown();
-                 
-                $('#login-form-link').click(function(e) {
-            		$("#login-form").delay(100).fadeIn(100);
-             		$("#register-form").fadeOut(100);
-            		$('#register-form-link').removeClass('active');
-            		$(this).addClass('active');
-            		e.preventDefault();
-            	});
-            	$('#register-form-link').click(function(e) {
-            		$("#register-form").delay(100).fadeIn(100);
-             		$("#login-form").fadeOut(100);
-            		$('#login-form-link').removeClass('active');
-            		$(this).addClass('active');
-            		e.preventDefault();
-            	});
-            
-            });
-    </script>
 </body>
 </html>

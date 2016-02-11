@@ -67,4 +67,20 @@ jQuery(function($) {'use strict',
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		social_tools: false
 	});	
+	
+	/*session json*/
+	
+	var session = function(){
+       $.getJSON('/rest/currentuser', function(response){
+            if(response.username) {
+            	var session = 'Hello ' + response.username + '!';
+            $(".session-hide").hide();
+            $(".session").html(session);
+            $(".navbar-inverse .navbar-nav > .logout").css("display","block");
+            $(".session").css("display","block");
+            }
+       }); 
+    };
+    session();
+	
 });
