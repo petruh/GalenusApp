@@ -18,7 +18,7 @@ import ro.sci.gms.service.UserService;
 import ro.sci.gms.service.ValidationException;
 
 @Controller
-@RequestMapping("/register")
+@RequestMapping("/register&login.html")
 public class RegistrationController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
@@ -37,16 +37,17 @@ public class RegistrationController {
 		} catch (Exception e) {
 			bindingResult.addError(new ObjectError("user", e.getMessage()));
 		}
-		return "redirect:/index";
+		return "redirect:/index.html";
 	}
 
 	@RequestMapping("")
-	String register(@AuthenticationPrincipal User user) {
+	public String register(@AuthenticationPrincipal User user) {
 		if (user==null) {
-			return "register";
+			return "register&login";
 		}
 		else {
-			return "redirect:/index";
+			LOGGER.debug("returning register and login");
+			return "redirect:/index.html";
 		}
 	}
 

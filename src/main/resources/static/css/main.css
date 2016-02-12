@@ -3080,3 +3080,11 @@ font-size:30px;
   color:white;
   margin-right:10px;
 }
+
+.login-message {
+  margin: 20px 0;
+  font-size: 15px;
+  color: #FF0101;
+  text-align: center;
+  text-shadow: 0 1px #FF9C9C;
+}

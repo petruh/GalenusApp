@@ -103,6 +103,8 @@
     	<div class="row">
 			<div class="col-md-6 col-md-offset-3">
 				<div class="panel panel-login">
+				<div class="login-message"><span th:if="${param.error}">Invalid username and password.</span></div>
+				<div class="login-message"><span th:if="${param.logout}">You have been logged out.</span></div>
 					<div class="panel-heading">
 						<div class="row">
 							<h2  id="logind">DOCTOR</h2>
