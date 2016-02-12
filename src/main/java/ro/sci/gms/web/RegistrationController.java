@@ -35,10 +35,9 @@ public class RegistrationController {
 		try {
 			userService.save(user);
 		} catch (Exception e) {
-			// result = renderEditPage(student.getId());
 			bindingResult.addError(new ObjectError("user", e.getMessage()));
 		}
-		return "index";
+		return "redirect:/index";
 	}
 
 	@RequestMapping("")
@@ -47,27 +46,8 @@ public class RegistrationController {
 			return "register";
 		}
 		else {
-			return "index";
+			return "redirect:/index";
 		}
 	}
-	/*
-	 * public ModelAndView index() {
-	 * 
-	 * Collection<Employee> allEmployees = employeeService.listAll();
-	 * 
-	 * ModelAndView modelAndView = new ModelAndView("employee_list");
-	 * modelAndView.addObject("allEmployees", allEmployees);
-	 * 
-	 * return modelAndView; }
-	 */
 
-	@RequestMapping(method = RequestMethod.GET, params = "action=add")
-	public String add() {
-		return "rest/user";
-	}
-
-	@RequestMapping(method = RequestMethod.GET, params = "action=edit")
-	public String edit(@RequestParam("id") Long id) {
-		return "rest/user";
-	}
 }
